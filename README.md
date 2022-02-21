@@ -8,7 +8,8 @@ golang 動態載入外掛
 實際例子可以參考 `plguins/ls.so` 這個檔案
 
 # 編譯外掛
-執行 `./build.sh`，目前 go 只支援 Linux, FreeBSD, and macOS，其他的平台不能編譯
+執行 `./build.sh`，目前 go 只支援 Linux, FreeBSD, and macOS，其他的平台不能編譯  
+除了用 `./build.sh` 一次編譯全部的命令外，在 [02056fa](https://github.com/simba-fs/go-plugin-test/commit/02056fae25583c529b06ae0d92c9effc32a96fea) 之後，你可以在命令直譯器裡面動態編譯新的命令。
 
 # 測試
 執行 `go run .`，會開啟一個陽春的命令界面，在這裡打指令，程式會去 `dist` 目錄找同名的外掛並執行搭他的 `Exec` 函式。用 `exec` 或 `CTRL-c` 可以離開

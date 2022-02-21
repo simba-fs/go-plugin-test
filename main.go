@@ -17,7 +17,7 @@ func dist(cmd string) string {
 	return fmt.Sprintf("./dist/%s.so", cmd)
 }
 
-// build command, you need to make sure that src file exist, dictionary dist exist
+// build command, you need to make sure that src file exist
 func build(src, dist string) error {
 	cmd := exec.Command("go", "build", "-buildmode=plugin", "-o", dist, src)
 	return cmd.Run()
